@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ohsiha - Niko Jäntti</title>
+</head>
+<body>
+<nav>
+	<div>
+		<ul>
+			<li>
+				<a href="/">Home</a>
+			</li>
+			{% if user.is_authenticated %}
+			<li>
+				<a href="/logout">Logout</a>
+			</li>
+			{% else %}
+			<li>
+				<a href="/login">Login</a>
+			</li>
+			<li>
+				<a href="/register">Register</a>
+			</li>
+			{% endif %}
+
+		</ul>
+	</div>
+</nav>
+
+{% block content %}{% endblock %}
+</body>
+</html>

@@ -16,7 +16,12 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from ohsiha.core import views as core_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/', core_views.register, name='register'),
+    path('', core_views.home, name='home'),
+    path('login/', core_views.signin, name='signin'),
+    path('logout/', core_views.signout, name='signout'),
 ]
